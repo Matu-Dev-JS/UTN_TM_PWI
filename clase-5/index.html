@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <h2>Informacion de usuario</h2>
+        <div>
+            <label for="username">Escribe el nombre de usuario:</label>
+            <input type="text" id="username" placeholder="Joe doe" required maxlength="16" minlength="2">
+        </div>
+        <div>
+            <label for="password">Escribe la contraseña</label>
+            <input type="password" id="password" required>
+        </div>
+        <div>
+            <label for="email">Ingresa tu email</label>
+            <input type="email" name="" id="email">
+        </div>
+        <div>
+            <label for="">Ingresa la fecha</label>
+            <input type="date" name="" id="">
+            <input type="datetime" name="" id="">
+            <input type="datetime-local" name="" id="">
+            <input type="time">
+            <input type="file" name="" id="">
+            <input type="number" name="" id="" max="20" min="1">
+            <input type="range" max="10" min="0" value="1">
+            <input type="checkbox" name="" id="">
+        </div>
+        <div>
+            <label for="terms">Acepta los terminos y condiciones</label>
+            <input type="checkbox" name="" id="terms">
+        </div>
+        <div>
+            <h2>Que te gusta?</h2>
+            <label for="HTML">HTML</label>
+            <input type="checkbox" name="" id="HTML">
+            <label for="CSS">CSS</label>
+            <input type="checkbox" name="" id="CSS">
+            <label for="JS">JS</label>
+            <input type="checkbox" name="" id="JS">
+        </div>
+        <div>
+            <h2>Que te gusta?</h2>
+            <label for="HTML">HTML</label>
+            <input type="radio" name="tecnologia-preferida" id="HTML">
+            <label for="CSS">CSS</label>
+            <input type="radio" name="tecnologia-preferida" id="CSS">
+            <label for="JS">JS</label>
+            <input type="radio" name="tecnologia-preferida" id="JS">
+            <label for="React">React</label>
+            <input type="radio" name="tecnologia-preferida" id="React">
+            <label for="Next.js">Next.js</label>
+            <input type="radio" name="tecnologia-preferida" id="Next.js">
+            
+        </div>
+        <div>
+            <label for="mensaje">Ingrese un mensaje</label>
+            <textarea placeholder="Hola" required rows="5" cols="6">hola</textarea>
+        </div>
+        <div>
+            <label for="pais">Seleccione un pais</label>
+            <select name="pais" id="pais">
+                <option value="ar">Argentina</option>
+                <option value="fr">Francia</option>
+                <option value="null" selected disabled>No seleccionado</option>
+            </select>
+        </div>
+        <button type="submit">Enviar</button>
+        <input type="submit" value="Confirmar">
+        <button type="button">Pepe</button><!-- Boton generico -->
+        <input type="reset" >
+        <button type="reset">Empezar devuelta</button>
+    </form>
+</body>
+</html>
