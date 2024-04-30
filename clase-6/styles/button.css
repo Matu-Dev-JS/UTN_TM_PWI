@@ -1,0 +1,27 @@
+
+/*CSS = Hoja de estilo en cascada */
+
+/* Este es el selector de elemento */
+button{
+    color: red;
+}
+
+/* El selector de clase */
+.especial{
+    color: rgb(24, 5, 225);
+}
+.super-especial{
+    background-color: red;
+}
+
+button{
+    color: blueviolet;
+}
+
+button{
+    color: red;
+}
+
+#btn-super-especial{
+    color: rgb(124, 201, 9)
+}

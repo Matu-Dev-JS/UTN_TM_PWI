@@ -1,0 +1,13 @@
+@import url('./button.css');
+
+/* Selector universal
+Selecciona todos los elementos
+*/
+
+*{
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*CSS = Hoja de estilo en cascada */
