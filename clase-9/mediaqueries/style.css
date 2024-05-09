@@ -3,6 +3,7 @@
 /* Desktop First */
 
 
+
 /* ELIJO MOBIBLE FIRST */
 
 *{
@@ -19,16 +20,25 @@
     align-items: center;
 }
 
-.hijo{
+.padre .hijo{
     width: 80vw;
     height: 200px;
     background-color: red;
     border: 1px solid black;
 }
 
+/* REGLAS:
+-Las mediaqueries deber estar abajo de todo
+-Los elementos que queramos modificar deben tener la misma especificidad o superior a los estilos previos del mismo elemento
+*/
+
 /* Cuando el ancho de mi pantalla sea MAYOR a 1000px */
 @media screen and (min-width: 1000px){
     .padre{
         background-color: aqua;
+    }
+
+    .padre .hijo{
+        background-color: blue;
     }
 }
