@@ -216,3 +216,17 @@ buscarProducto('celular')
 ]
 
 */
+
+function buscarProducto (busqueda){
+    const arrayProductos = [] 
+    for (const producto of productos){
+        if (producto.title.toLowerCase().includes(busqueda.toLowerCase())){
+            arrayProductos.push(producto)
+        }
+    }
+    return arrayProductos;
+}
+
+/* let stringBuscado = prompt('ingrese el nombre del producto que desea buscar')
+
+console.log(buscarProducto(stringBuscado)) */
