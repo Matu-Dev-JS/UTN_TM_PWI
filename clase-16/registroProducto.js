@@ -77,6 +77,38 @@ const solicitarDato = (objetoDeConfeccion) => {
 
 
 const registrarProducto = () => {
+    
+    const producto = {}
+    for (let propiedad in DATOS_PRODUCTO){
+        let dato = solicitarDato(DATOS_PRODUCTO[propiedad])
+        producto[propiedad.toLowerCase()] = dato
+    }
+
+
+
+    let mensajeConfirmacion = `
+    Esta seguro de confirmar el producto:
+    Titulo: ${producto.titulo}
+    Precio: ${producto.precio}
+    Descripcion: ${producto.descripcion}
+    Categoria: ${producto.categoria}
+    Marca: ${producto.marca}
+    `
+    let confirmacion = prompt(mensajeConfirmacion)
+    if(validarNegacion(confirmacion)){
+        registrarProducto()
+    }
+    else{
+        console.log(producto)
+    }
+}
+
+
+registrarProducto() 
+
+
+/* 
+const registrarProducto = () => {
 
 
     let titulo = solicitarDato(DATOS_PRODUCTO.TITULO)
@@ -112,7 +144,7 @@ const registrarProducto = () => {
 
 registrarProducto()
 
-
+ */
 
 
 
