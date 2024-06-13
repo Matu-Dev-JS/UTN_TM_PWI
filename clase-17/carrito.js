@@ -182,4 +182,69 @@ const eliminarItemPorId = (id) =>{
 }
 
 
-eliminarItemPorId(1)
+const agregarItemAlCarrito = (producto) => {
+    const itemBuscado = carrito.find((item) => item.id === producto.id)
+    if(itemBuscado){
+        /* Logica para incrementar la cantidad */
+        itemBuscado.cantidad = itemBuscado.cantidad + 1
+        /* 
+        Proceso interno: String(itemBuscado) + 1
+                        '[Object object]' + 1
+                        '[Object object]1'
+        */
+        /* Sugar syntax */
+      /*   itemBuscado.cantidad += 1 */
+    } else {
+        /* Logica para agregar el producto al carrito */
+        producto.cantidad = 1
+        carrito.push(producto)
+        
+    }
+    renderizarCarrito(carrito)
+    /* SIEMPRE QUE MODIFIQUE MI CARRITO DEBO RE-RENDERIZAR */
+    
+}
+
+/* agregarItemAlCarrito({
+    nombre: 'Honda Civic',
+    id: 20,
+    precio: 25000,
+    thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWAApjDiM2t4OqVSjXoJWwNFl4k32NArjLSQ&s"
+})
+ */
+
+/* eliminarItemPorId(1) */
+
+
+
+const users = [
+    {
+        nombre: 'pepe',
+        id: 1
+    },
+    {
+        nombre: 'juan',
+        id: 2
+    },
+    {
+        nombre: 'maria',
+        id: 3
+    }
+]
+
+
+// const find = (array, callback) =>{
+//     for(const element of array){
+//         /* callback va a retornar o verdadero o false */
+//         if(callback(element)){
+//             return element
+//         }
+//     }
+//     return undefined
+// }
+
+// const usuarioBuscado = find(users, (user) => {
+//     return user.id == 3
+// } )
+
+// console.log(usuarioBuscado)
