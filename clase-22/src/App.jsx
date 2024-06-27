@@ -1,6 +1,8 @@
 import React from 'react'
-import Button from './Components/Button'
+import Button from './Components/Button/Button'
 import Layout from './Components/Layout'
+import UserCard from './Components/UserCard/UserCard'
+import UserCardList from './Components/UserCardList/UserCardList'
 
 
 
@@ -35,10 +37,27 @@ function App() {
     <div>Juan</div>,
     <div>Maria</div>
   ] */
+
+  const usuarios = [
+    {
+      nombre: 'Pepe',
+      rol: 'web developer',
+      anios_experiencia: 14
+    },
+    {
+      nombre: 'Julieta',
+      rol: 'SEO Master',
+      anios_experiencia: 10
+    }
+  ]
+ 
   return (
     <div>
       <h2>Nombres</h2>
       {listaJSXNombres}
+      <div style={{backgroundColor: 'red', width: '200px', height: '200px'}} className='caja-especial'></div>
+      <Button>Click me</Button>
+      <UserCardList usuarios={usuarios}/>
     </div>
   )
 }
