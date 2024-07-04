@@ -1,0 +1,40 @@
+.color-card .colors{
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.color-card .colors .color{
+    display: flex;
+    align-items: end;
+    height: 100%;
+}
+
+.colors .color .color-hex{
+    color: #e6e6e6;
+    background-color: rgba(0, 0, 0, 0.27);
+    padding: 5px;
+    width: 80px;
+    text-align: center;
+    font-size: 12px;
+    border-top-right-radius: 5px;
+    display: none
+}
+
+.colors .color:hover .color-hex{
+    display: inline-block;
+}
+
+.colors .color:nth-child(1){
+    height: 40%;
+}
+.colors .color:nth-child(2){
+    height: 25%;
+}
+.colors .color:nth-child(3){
+    height: 20%;
+}
+.colors .color:nth-child(4){
+    height: 15%;
+}
