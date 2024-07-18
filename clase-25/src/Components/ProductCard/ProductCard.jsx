@@ -16,6 +16,7 @@ const ProductCard = ({ producto }) => {
     return (
         <div>
             <h3>{nombre}</h3>
+            
             <span>Precio: ${precio}</span>
             <span><b>Unidades disponibles:</b> {stock}</span>
             <Link to={'/detail/' + id}>Ver detalle</Link>

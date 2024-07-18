@@ -6,7 +6,8 @@ export const productos = [
         id: 1,
         stock: 10,
         codigo: "LT-NITRO5-1650",
-        categoria: "Tecnología"
+        categoria: "Tecnología",
+        thumbnail: '/imagenes/laptop.jpg'
     },
     {
         nombre: "Smart TV 55 pulgadas 4K UHD",
@@ -15,7 +16,8 @@ export const productos = [
         id: 2,
         stock: 15,
         codigo: "TV-55UHD-SMART",
-        categoria: "Hogar"
+        categoria: "Hogar",
+        thumbnail: '/imagenes/laptop-hp.avif'
     },
     {
         nombre: "Smartphone Galaxy S22 Ultra",
@@ -24,7 +26,8 @@ export const productos = [
         id: 3,
         stock: 8,
         codigo: "SM-S22ULTRA",
-        categoria: "Tecnología"
+        categoria: "Tecnología",
+        thumbnail: 'https://d598hd2wips7r.cloudfront.net/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/8/2/827J9LA-1_T1709307946.png'
     },
     {
         nombre: "Cafetera Express Automática",
@@ -33,7 +36,8 @@ export const productos = [
         id: 4,
         stock: 20,
         codigo: "CAF-EXPRESS-AUTO",
-        categoria: "Hogar"
+        categoria: "Hogar",
+        thumbnail: '/imagenes/laptop.jpg'
     },
     {
         nombre: "Auriculares Inalámbricos Bluetooth",
@@ -42,7 +46,8 @@ export const productos = [
         id: 5,
         stock: 12,
         codigo: "AUR-INALM-BT",
-        categoria: "Tecnología"
+        categoria: "Tecnología",
+        thumbnail: '/imagenes/laptop.jpg'
     },
     {
         nombre: "Cama King Size con Colchón",
@@ -51,7 +56,8 @@ export const productos = [
         id: 6,
         stock: 5,
         codigo: "CAMA-KING-VISCO",
-        categoria: "Hogar"
+        categoria: "Hogar",
+        thumbnail: '/imagenes/laptop.jpg'
     },
     {
         nombre: "Refrigerador Doble Puerta",
@@ -60,7 +66,8 @@ export const productos = [
         id: 7,
         stock: 18,
         codigo: "REF-DOPUERTA",
-        categoria: "Hogar"
+        categoria: "Hogar",
+        thumbnail: '/imagenes/laptop.jpg'
     },
     {
         nombre: "Lavadora Automática",
@@ -69,7 +76,8 @@ export const productos = [
         id: 8,
         stock: 14,
         codigo: "LAV-AUTOMATICA",
-        categoria: "Hogar"
+        categoria: "Hogar",
+        thumbnail: '/imagenes/laptop.jpg'
     },
     {
         nombre: "Aire Acondicionado Split",
@@ -78,7 +86,8 @@ export const productos = [
         id: 9,
         stock: 11,
         codigo: "AA-SPLIT",
-        categoria: "Hogar"
+        categoria: "Hogar",
+        thumbnail: '/imagenes/laptop.jpg'
     },
     {
         nombre: "Bicicleta de Montaña",
@@ -87,6 +96,7 @@ export const productos = [
         id: 10,
         stock: 7,
         codigo: "BIC-MONTANA",
-        categoria: "Deporte"
+        categoria: "Deporte",
+        thumbnail: '/imagenes/laptop.jpg'
     }
 ];

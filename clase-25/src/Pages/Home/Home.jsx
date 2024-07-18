@@ -1,11 +1,19 @@
 import React from 'react'
 import { ProductList } from '../../Components'
-import { productos } from '../../data/productsData'
+
+import icono from '../../assets/vite.svg'
+import { obtenerProductos } from '../../helpers/productos'
+import { crearProducto } from '../../helpers/productos'
+import { useGlobalContext } from '../../Context/GlobalContext'
 
 const Home = () => {
+  const {productos} = useGlobalContext()
+
+
+
   return (
     <div>
-      <h1>Elige nuestros productos</h1>
+      <h1>Elige nuestros productos <img src={icono} alt="" /></h1>
       <ProductList productos={productos}/>
     </div>
   )
