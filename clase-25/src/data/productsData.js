@@ -100,3 +100,9 @@ export const productos = [
         thumbnail: '/imagenes/laptop.jpg'
     }
 ];
+
+
+
+
+
+
