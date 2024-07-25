@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useGlobalContext } from '../../Context/GlobalContext'
 
 const NewProduct = () => {
@@ -9,6 +9,17 @@ const NewProduct = () => {
         'hogar',
         'deportes'
     ]
+    const [formValues, setFormValues] = useState(
+        {
+            categoria: ''
+        }
+    )
+    const handleChangeValue = (e) => {
+        const nameInput = e.target.name
+        const selectedOption = e.target.value
+        setFormValues({...formValues, [nameInput]: selectedOption})
+    }
+    console.log(formValues)
   return (
     <div>
         <h1>Crear producto</h1>
@@ -35,10 +46,21 @@ const NewProduct = () => {
             </div>
             <div>
                 <label htmlFor="categoria">Seleccione una categoria</label>
-                <select name="categoria" id="categoria">
-                    {CATEGORIAS_DISPONIBLES.map((categoria, index) => {
-                        <option key={index + categoria} value={categoria}>{categoria}</option>
-                    }) }
+                <select 
+                    name="categoria" 
+                    id="categoria" 
+                    onChange={handleChangeValue} 
+                    value={formValues.categoria}
+                >
+                    {CATEGORIAS_DISPONIBLES.map((categoria, index) =>
+                        <option 
+                            key={index + categoria} 
+                            value={categoria} 
+                        >
+                            {categoria}
+                        </option>
+                    ) }
+                    <option value={''} disabled>No seleccionado</option>
                 </select>
             </div>
             <div>
