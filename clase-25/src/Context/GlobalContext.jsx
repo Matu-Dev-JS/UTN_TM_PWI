@@ -29,13 +29,19 @@ export const GlobalContextProvider = ({children}) => {
         navigation('/login')
     }
 
+    const handleCreateProduct = (e) => {
+        e.preventDefault()
+        console.log("Producto creado")
+    }
+
     return (
         <GlobalContext.Provider value={
                 {
                     productos: productos,
                     handleDeleteProduct: handleDeleteProduct,
                     getUserData: getUserData,
-                    logout: logout
+                    logout: logout,
+                    handleCreateProduct: handleCreateProduct
                 }
             }>
             {children}
