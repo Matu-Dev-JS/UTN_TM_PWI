@@ -13,11 +13,29 @@ export const GlobalContextProvider = ({children}) => {
         navigation('/')
     }
 
+    const getUserData = () => {
+        const user = JSON.parse(localStorage.getItem('user'))
+        return user
+       /*  if(user){
+            return user
+        }
+        else{
+            navigation('/login')
+        } */
+    }
+
+    const logout = () => {
+        localStorage.removeItem('user')
+        navigation('/login')
+    }
+
     return (
         <GlobalContext.Provider value={
                 {
                     productos: productos,
-                    handleDeleteProduct: handleDeleteProduct
+                    handleDeleteProduct: handleDeleteProduct,
+                    getUserData: getUserData,
+                    logout: logout
                 }
             }>
             {children}
