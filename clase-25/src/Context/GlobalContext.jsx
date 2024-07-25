@@ -1,11 +1,14 @@
 import { createContext, useContext, useState } from "react";
-import { eliminarProductoPorId, obtenerProductos } from "../helpers/productos";
+import { crearProducto, eliminarProductoPorId, obtenerProductos } from "../helpers/productos";
 import { useNavigate } from "react-router-dom";
+import { v4 as uuid } from 'uuid';
+import { obtenerCarrito } from "../helpers/cart";
 
 const GlobalContext = createContext()
 
 export const GlobalContextProvider = ({children}) => {
     const [productos, setProductos] = useState(obtenerProductos()) 
+    const [carrito, setCarrito] = useState(obtenerCarrito())
     const navigation = useNavigate()
 
     const handleDeleteProduct = (id) => {
@@ -32,7 +35,38 @@ export const GlobalContextProvider = ({children}) => {
     const handleCreateProduct = (e) => {
         e.preventDefault()
         console.log("Producto creado")
+        const formulario = e.target
+        const formularioValores = new FormData(formulario)
+
+        const nuevoProducto = {
+            nombre: "",
+            descripcion: "",
+            precio: 0,
+            stock: 0,
+            codigo: "",
+            categoria: "",
+            thumbnail: ''
+        } 
+        for(let propiedad in nuevoProducto){
+            nuevoProducto[propiedad] = formularioValores.get(propiedad)
+        }
+        nuevoProducto.id = uuid()
+
+
+        /* SI quieren validar, este es el momento */
+
+        setProductos([...productos, nuevoProducto])
+        crearProducto(nuevoProducto)
+        navigation('/')
     }
+    
+    /* const agregarProductoAlCarrito = (producto) => {
+        setCarrito([...carrito, producto])
+        HACER EN USE EFFECT
+        guardarCarrito(carrito)
+    }
+ */
+
 
     return (
         <GlobalContext.Provider value={
@@ -41,7 +75,8 @@ export const GlobalContextProvider = ({children}) => {
                     handleDeleteProduct: handleDeleteProduct,
                     getUserData: getUserData,
                     logout: logout,
-                    handleCreateProduct: handleCreateProduct
+                    handleCreateProduct: handleCreateProduct,
+                    carrito: carrito
                 }
             }>
             {children}

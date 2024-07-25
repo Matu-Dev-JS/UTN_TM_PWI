@@ -2,7 +2,7 @@ import { productos } from "../data/productsData"
 
 export const obtenerProductoPorId = (id) => {
     const lista_productos = obtenerProductos()
-    return lista_productos.find(producto => Number(producto.id) === Number(id))
+    return lista_productos.find(producto => producto.id === id)
 }
 
 /* 
