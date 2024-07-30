@@ -9,7 +9,7 @@ import './Home.css'
 import { Link, useNavigate } from 'react-router-dom'
 
 const Home = () => {
-  const {productos, getUserData, logout} = useGlobalContext()
+  const {productos, getUserData, logout, handleChangeSearchTerm, searchTerm} = useGlobalContext()
   const user = getUserData()
  
   
@@ -39,9 +39,11 @@ const Home = () => {
         </>
       }
 
+
       <div className='imageContainer'>
         <img src="/imagenes/Juan.jpg" alt="" />
       </div>
+      <input onChange={handleChangeSearchTerm} value={searchTerm}/>
       <h1>Elige nuestros productos <img src={icono} alt="" /></h1>
       <ProductList productos={productos}/>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
-import { Detail, Home, Cart, Login, NewProduct, NotFound } from './Pages'
+import { Detail, Home, Cart, Login, NewProduct, NotFound, Review } from './Pages'
 function App() {
 
 
@@ -12,6 +12,7 @@ function App() {
 			<Route path='/cart' element={<Cart/>} />
 			<Route path='/product/new' element={<NewProduct/>} />
 			<Route path='/*' element={<NotFound/>}/>
+			<Route path='/reviews' element={<Review/>} />
 		</Routes>
 	)
 }

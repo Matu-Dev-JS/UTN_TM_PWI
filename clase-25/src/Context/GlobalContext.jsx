@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { crearProducto, eliminarProductoPorId, obtenerProductos } from "../helpers/productos";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuid } from 'uuid';
@@ -8,8 +8,32 @@ const GlobalContext = createContext()
 
 export const GlobalContextProvider = ({children}) => {
     const [productos, setProductos] = useState(obtenerProductos()) 
+    const [searchTerm, setSearchTerm] = useState('')
     const [carrito, setCarrito] = useState(obtenerCarrito())
     const navigation = useNavigate()
+
+
+    const handleChangeSearchTerm = ( e ) => {
+        setSearchTerm(e.target.value)
+    }
+
+    useEffect(()=>{
+        const productList = obtenerProductos()
+        if(searchTerm != ''){
+            const newProductList = productList.filter(product => product.nombre.toLowerCase().includes(searchTerm.toLowerCase()))
+            setProductos(newProductList)
+        }
+        else{
+            setProductos(productList)
+        }
+        
+    }, [searchTerm])
+
+
+
+    useEffect(()=> {
+        console.log("Se recargo el producto")
+    }, [productos])
 
     const handleDeleteProduct = (id) => {
         setProductos(eliminarProductoPorId(id))
@@ -76,7 +100,9 @@ export const GlobalContextProvider = ({children}) => {
                     getUserData: getUserData,
                     logout: logout,
                     handleCreateProduct: handleCreateProduct,
-                    carrito: carrito
+                    carrito: carrito,
+                    handleChangeSearchTerm,
+                    searchTerm
                 }
             }>
             {children}
